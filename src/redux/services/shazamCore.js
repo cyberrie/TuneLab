@@ -3,17 +3,20 @@ require("dotenv").config();
 
 const X_RapidAPI_Key = process.env.X_RapidAPI_Key;
 
-fetch("https://shazam-core.p.rapidapi.com/v1/charts/world", options)
-  .then((response) => response.json())
-  .then((response) => console.log(response))
-  .catch((err) => console.error(err));
-
 export const shazamCoreApi = createApi({
   reducerPath: "shazamCoreApi",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://shazam-core.p.rapidapi.com/v1",
-    prepareHeaders: () => {
+    prepareHeaders: (headers) => {
       headers.set("X-RapidAPI-Key", X_RapidAPI_Key);
+      return headers;
     },
   }),
+
+  // here we can add parameters for endpoints and export them to use in relevant comonents/pages
+  endpoints: (builder) => ({
+    getTopCharts: builder.query({ query: "/charts/world" }),
+  }),
 });
+
+export const { useGetTopChartsQuery } = shazamCoreApi;
