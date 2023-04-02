@@ -1,54 +1,43 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { Route, Routes } from 'react-router-dom'
+
+import { Sidebar, Searchbar
+ } from './components/Sidebar';
+// import components
+// import pages
 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img className="App-logo" alt="logo" />
+    <div className="relative-flex">
 
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+      <Sidebar />
+      <div>
+        <Searchbar />
+
+        <div>
+          <div>
+        <Routes>
+        <Route path="/" element={<Discover />} />
+              <Route path="/top-artists" element={<TopArtists />} />
+              <Route path="/top-charts" element={<TopCharts />} />
+              <Route path="/around-you" element={<AroundYou />} />
+              <Route path="/artists/:id" element={<ArtistDetails />} />
+              <Route path="/songs/:songid" element={<SongDetails />} />
+              <Route path="/search/:searchTerm" element={<Search />} />
+        </Routes>
+          </div>
+        <div>
+          <TopPlay />
+        </div>
+      </div>
+    </div>
+    {activeSong?.title && (
+        <div className="absolute h-28 bottom-0 left-0 right-0 flex animate-slideup bg-gradient-to-br from-white/10 to-[#2a2a80] backdrop-blur-lg rounded-t-3xl z-10">
+          <MusicPlayer />
+        </div>
+      )}
     </div>
   );
 }
