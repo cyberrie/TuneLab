@@ -2,7 +2,7 @@
 
 TuneLab is a web application that allows you to discover top artists, top charts, and top artists and charts, search for and listen to your favourite music. The app utilizes ShazamCore API, React Redux, Tailwind, and Vite, and is deployed on Netlify.
 
-The functionality of the TuneLab web application is made possible by the use of the [ShazamCore Rapid API](https://rapidapi.com/tipsters/api/shazam-core), which provides access to a vast music database. The app utilizes the [Geo Ipify](https://geo.ipify.org/) API to determine the user's location and provide customized content based on their location.
+The functionality of the TuneLab web application is made possible by the use of the [ShazamCore Rapid API](https://rapidapi.com/tipsters/api/shazam-core), which provides access to a vast music database. The app utilizes the [Geo Ipify API](https://geo.ipify.org/) to determine the user's location and provide customized content based on their location.
 
 ## Getting Started
 
