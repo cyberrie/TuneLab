@@ -57,4 +57,4 @@ Below link will take you to the app demo:
 
 ## Acknowledgements
 
-This App was inspired by [JavaScript Mastery](https://www.youtube.com/@javascriptmastery), with my personal touch added.
+This App was inspired by [JavaScript Mastery](https://www.youtube.com/@javascriptmastery).
